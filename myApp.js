@@ -18,7 +18,10 @@ app.get("/json", (req, res) => {
 
 
 } );
-
+app.use(function middleWare(req, res. next){
+    var string = req.method + " " + req.path + " - " + req.ip;
+    next();
+});
 app.use("/public",express.static(__dirname + "/public"));
 
 
