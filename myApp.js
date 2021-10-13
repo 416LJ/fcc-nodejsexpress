@@ -1,14 +1,11 @@
 var express = require('express');
 var app = express();
 
-app.use((req, res, next) => {
+app.use((req, res, next)=>{
+    console.log(req.method + req.path + req.ip);
+    next();
+})
 
-    let string = `${req.method} ${req.path} - ${req.ip}`
-    console.log(string) 
-      
-     next();
-   
-   });
 
 app.get("/json", (req, res) => {
     if (process.env.MESSAGE_STYLE == "uppercase"){
@@ -28,6 +25,7 @@ app.get("/json", (req, res) => {
 
 } );
 
+app.use("/public",express.static(__dirname + "/public"));
 
 
 
