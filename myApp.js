@@ -13,7 +13,7 @@ const middleware = (req, res, next) => {
   });
 
 
-  await.get("/:word/:echo", (req, res) => {
+  await.get("/:word/echo", (req, res) => {
       const { word } = req.params;
       res.json({
           echo : word
