@@ -13,6 +13,7 @@ app.use((req, res, next)=>{
     next();
 });
 
+app.use(bodyParser.urlencoded({extended: false}));
 
 //1. meet the node console
 console.log("hello laxsan");
