@@ -13,7 +13,7 @@ app.use((req, res, next)=>{
     next();
 });
 // 11 -- initialized parser
-//app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 //1. meet the node console
 console.log("hello laxsan");
@@ -23,6 +23,10 @@ console.log("hello laxsan");
     res.send("Hello Express");
   });
 **/
+// test locally
+app.listen(3001, function() {
+    console.log('Listening on port 3000');
+    });
 
 
 // 3. serve html file
@@ -79,7 +83,10 @@ app.get("/name", (req, res) => {
 });
 
 
-
+//12. submit info
+app.post("/name", (req, res) => {
+    res.json({name: req.query.first + " " + req.query.last});
+});
 
 
 
