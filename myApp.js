@@ -1,6 +1,8 @@
+const bodyParser = require('body-parser');
 const { json } = require('body-parser');
 var express = require('express');
 var app = express();
+//11. install body parser in json package file
 
 
 // 7. root level logger
