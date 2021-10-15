@@ -1,9 +1,9 @@
 
 var express = require('express');
 var app = express();
-
-var bodyParser = require('body-parser');
 //11. install body parser in json package file
+var bodyParser = require('body-parser');
+
 
 
 
@@ -12,7 +12,7 @@ app.use((req, res, next)=>{
     console.log(`${req.method} ${req.path} - ${req.ip}`);
     next();
 });
-
+// 11 -- initialized parser
 app.use(bodyParser.urlencoded({extended: false}));
 
 //1. meet the node console
@@ -74,9 +74,9 @@ app.get("/:word/echo", (req, res) => {
 app.get("/name", (req, res) => {
   const first = req.query.first;
   const last= req.query.last;   
-  const { first: firstName, last: lastName } = req.query;
+  const { first: first, last: last } = req.query;
   res.send({
-      name : `${firstName} ${lastName}`
+      name : `${first} ${last}`
   });
 });
 
