@@ -66,7 +66,7 @@ app.get("/:word/echo", (req, res) => {
 
 // 10. get parameter query
 
-app.get("/name", (req, res) => {
+app.get('/name', (req, res) => {
   const first = req.query.first;
   const last= req.query.last;   
   res,json({
