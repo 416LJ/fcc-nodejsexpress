@@ -21,16 +21,7 @@ const middleware = (req, res, next) => {
       })
   });
 
-  app.get("/name", (req, res) => {
-      const first = req.query.first;
-      const last= req.query.last;   
 
-
-      res,json({
-          name: `${first} ${last}`
-
-      });
-  })
 
 app.use((req, res, next)=>{
     console.log(`${req.method} ${req.path} - ${req.ip}`);
@@ -55,5 +46,16 @@ app.get("/json", (req, res) => {
 } );
 
 app.use("/public",express.static(__dirname + "/public"));
+
+app.get("/name", (req, res) => {
+    const first = req.query.first;
+    const last= req.query.last;   
+
+
+    res,json({
+        name: `${first} ${last}`
+
+    });
+})
 
  module.exports = app;
