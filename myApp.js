@@ -74,9 +74,9 @@ app.get("/:word/echo", (req, res) => {
 app.get("/name", (req, res) => {
   const first = req.query.first;
   const last= req.query.last;   
-  const { first: first, last: last } = req.query;
+  const { first: firstName, last: lastName } = req.query;
   res.send({
-      name : `${first} ${last}`
+      name : `${firstName} ${lastName}`
   });
 });
 
