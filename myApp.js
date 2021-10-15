@@ -5,13 +5,20 @@ const middleware = (req, res, next) => {
     req.time = new Date().toString();
     next();
   };
-  
+
   app.get("/now", middleware, (req, res) => {
     res.send({
       time: req.time
     });
   });
 
+
+  await.get("/:word/:echo", (req, res) => {
+      const { word } = req.params;
+      res.json({
+          echo : word
+      })
+  });
 
 app.use((req, res, next)=>{
     console.log(`${req.method} ${req.path} - ${req.ip}`);
