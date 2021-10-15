@@ -18,10 +18,10 @@ app.use((req, res, next)=>{
 console.log("hello laxsan");
 
 //2. working express server
-app.get("/", (req, res) => {
+/** app.get("/", (req, res) => {
     res.send("Hello Express");
   });
-
+**/
 
 
 // 3. serve html file
