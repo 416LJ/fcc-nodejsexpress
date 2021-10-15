@@ -14,23 +14,6 @@ const middleware = (req, res, next) => {
   });
 
 //
-  app.get("/:word/echo", (req, res) => {
-      const { word } = req.params;
-      res.json({
-          echo : word
-      })
-  });
-
-  app.get("/name", (req, res) => {
-    const first = req.query.first;
-    const last= req.query.last;   
-
-
-    res,json({
-        name: `${first} ${last}`
-
-    });
-})
 
 
 
@@ -59,6 +42,25 @@ app.get("/json", (req, res) => {
           });
     }
 } );
+
+app.get("/:word/echo", (req, res) => {
+    const { word } = req.params;
+    res.json({
+        echo : word
+    })
+});
+
+app.get("/name", (req, res) => {
+  const first = req.query.first;
+  const last= req.query.last;   
+
+
+  res,json({
+      name: `${first} ${last}`
+
+  });
+})
+
 
 
 //serve static assets
