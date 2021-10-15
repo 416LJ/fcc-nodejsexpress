@@ -1,6 +1,18 @@
 var express = require('express');
 var app = express();
 
+const middleware = (req, res, next) => {
+    req.time = new Date().toString();
+    next();
+  };
+  
+  app.get("/now", middleware, (req, res) => {
+    res.send({
+      time: req.time
+    });
+  });
+
+
 app.use((req, res, next)=>{
     console.log(`${req.method} ${req.path} - ${req.ip}`);
     next();
@@ -9,7 +21,7 @@ app.use((req, res, next)=>{
 app.get("/", function(req, res) {
     res.sendFile(__dirname + "/views/index.html");
   });
-
+                      
 app.get("/json", (req, res) => {
     if (process.env.MESSAGE_STYLE == "uppercase"){
         res.json({
@@ -21,41 +33,8 @@ app.get("/json", (req, res) => {
             message: "Hello json"
           });
     }
-
-    
-    
-
-
 } );
 
 app.use("/public",express.static(__dirname + "/public"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  module.exports = app;
