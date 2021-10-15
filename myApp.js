@@ -13,7 +13,7 @@ app.use((req, res, next)=>{
     next();
 });
 // 11 -- initialized parser
-// app.use(bodyParser.urlencoded({extended: false}));
+//app.use(bodyParser.urlencoded({extended: false}));
 
 //1. meet the node console
 console.log("hello laxsan");
@@ -74,9 +74,9 @@ app.get("/:word/echo", (req, res) => {
 app.get("/name", (req, res) => {
   const first = req.query.first;
   const last= req.query.last;   
-  const { first: firstName, last: lastName } = req.query;
+  const { first: first, last: last } = req.query;
   res.send({
-      name : `${firstName} ${lastName}`
+      name : `${first} ${last}`
   });
 });
 
