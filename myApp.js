@@ -1,3 +1,4 @@
+const { json } = require('body-parser');
 var express = require('express');
 var app = express();
 
@@ -19,6 +20,17 @@ const middleware = (req, res, next) => {
           echo : word
       })
   });
+
+  app.get("/name", (req, res) => {
+      const firstName = req.query.first;
+      const lastName = req.query.last;   
+
+
+      res,json({
+          name: `${firstName} ${lastName}`
+
+      });
+  })
 
 app.use((req, res, next)=>{
     console.log(`${req.method} ${req.path} - ${req.ip}`);
