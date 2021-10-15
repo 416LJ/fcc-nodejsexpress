@@ -22,12 +22,12 @@ const middleware = (req, res, next) => {
   });
 
   app.get("/name", (req, res) => {
-      const firstName = req.query.first;
-      const lastName = req.query.last;   
+      const first = req.query.first;
+      const last= req.query.last;   
 
 
       res,json({
-          name: `${firstName} ${lastName}`
+          name: `${first} ${last}`
 
       });
   })
