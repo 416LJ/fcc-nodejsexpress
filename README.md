@@ -1,1 +1,1 @@
-# [Introduction to the Basic Node and Express Challenges](https://www.freecodecamp.org/learn/apis-and-microservices/basic-node-and-express/)
+# [Introduction to the Basic Node and Express Challenges](https://www.freecodecamp.org/learn/apis-and-microservices/basic-node-and-express/) [![CodeFactor](https://www.codefactor.io/repository/github/416lj/fcc-nodejsexpress/badge)](https://www.codefactor.io/repository/github/416lj/fcc-nodejsexpress)
